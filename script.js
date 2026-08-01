@@ -26,3 +26,32 @@ if (noBtn) {
         moveButton();
     });
 }
+function showLove(){
+
+    const container = document.getElementById("love-container");
+
+    for(let i=0;i<120;i++){
+
+        const heart=document.createElement("div");
+
+        heart.className="flying-heart";
+
+        heart.innerHTML="❤️";
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.top="100vh";
+
+        heart.style.fontSize=(20+Math.random()*35)+"px";
+
+        heart.style.animationDuration=(2+Math.random()*2)+"s";
+
+        container.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },4000);
+
+    }
+
+}
