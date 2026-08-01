@@ -1,31 +1,23 @@
-// Efek muncul saat halaman dibuka
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loaded");
-});
+const noBtn = document.getElementById("noBtn");
 
-// Smooth scroll untuk tombol
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-        e.preventDefault();
+if (noBtn) {
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
+    noBtn.addEventListener("mouseover", moveButton);
 
-// Efek zoom saat klik foto
-document.querySelectorAll(".grid img").forEach(img => {
+    noBtn.addEventListener("click", moveButton);
 
-    img.addEventListener("click", () => {
+}
 
-        if (img.classList.contains("zoom")) {
-            img.classList.remove("zoom");
-        } else {
-            document.querySelectorAll(".grid img").forEach(i => i.classList.remove("zoom"));
-            img.classList.add("zoom");
-        }
+function moveButton() {
 
-    });
+    const maxX = window.innerWidth - 180;
+    const maxY = window.innerHeight - 80;
 
-});
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+}
