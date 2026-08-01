@@ -205,5 +205,40 @@ padding:40px 25px;
 width:100%;
 
 }
+/* ========================= */
+/* Gallery */
+/* ========================= */
+
+.gallery{
+    width:100%;
+    margin:40px 0;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+
+    width:100%;
+    aspect-ratio:3/4;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    display:block;
+
+    transition:.3s ease;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.gallery img:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+}
 
 }
