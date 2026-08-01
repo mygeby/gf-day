@@ -365,3 +365,52 @@ grid-template-columns:1fr;
 }
 
 }
+
+#love-container{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:9999;
+
+}
+
+.flying-heart{
+
+    position:absolute;
+
+    font-size:30px;
+
+    animation:fly 3s linear forwards;
+
+}
+
+@keyframes fly{
+
+    0%{
+
+        transform:translateY(0) scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.8) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
