@@ -1,23 +1,28 @@
 const noBtn = document.getElementById("noBtn");
 
 if (noBtn) {
+    const moveButton = () => {
+        const padding = 20;
 
-    noBtn.addEventListener("mouseover", moveButton);
+        const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+        const maxY = window.innerHeight - noBtn.offsetHeight - padding;
 
-    noBtn.addEventListener("click", moveButton);
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
 
-}
+        noBtn.style.position = "fixed";
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
+    };
 
-function moveButton() {
+    noBtn.addEventListener("mouseenter", moveButton);
+    noBtn.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        moveButton();
+    });
 
-    const maxX = window.innerWidth - 180;
-    const maxY = window.innerHeight - 80;
-
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-
-    noBtn.style.position = "fixed";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-
+    noBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        moveButton();
+    });
 }
